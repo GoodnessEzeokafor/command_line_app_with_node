@@ -40,7 +40,7 @@ const addNote = (title, body) =>{
 
 
 const getAll = ()=>{
-    return "Getting all notes";
+    return fetchNotes();
 };
 
 const getNote=(title)=>{

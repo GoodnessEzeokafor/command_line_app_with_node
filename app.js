@@ -23,8 +23,11 @@ if(command === 'add'){
         console.log(`Body: ${argv.body}`);
     }
 } else if(command === 'list'){
-    console.log(notes.getAll());
-
+    var allNotes = notes.getAll();
+    console.log(`Printing${allNotes.length} note(s).`);
+    allNotes.forEach((note) =>{
+        notes.logNote(note);
+    });
 } else if (command === 'remove'){
   var note_removed = notes.removeNote(argv.title);
   var message = note_removed ? 'Note Was Removed': 'Note Not Found';
